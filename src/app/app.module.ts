@@ -7,18 +7,22 @@ import { FormsModule } from "@angular/forms";
 import { interceptorProvider } from './service/interceptor-service';
 
 import { AppComponent } from './app.component';
-import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-import { ProyectosComponent } from './proyectos/proyectos.component';
-import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
-import { TecnologiasComponent } from './tecnologias/tecnologias.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
-import { NuevaExperienciaComponent } from './sobre-mi/experiencia/nueva-experiencia.component';
-import { EditExperienciaComponent } from './sobre-mi/experiencia/edit-experiencia.component';
-import { NeweducacionComponent } from './educacion/neweducacion.component';
-import { EditeducacionComponent } from './educacion/editeducacion.component';
-import { EducacionComponent } from './educacion/educacion.component';
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { LoginComponent } from './components/login/login.component';
+import { NuevaExperienciaComponent } from './components/experiencia/nueva-experiencia.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { NeweducacionComponent } from './components/educacion/neweducacion.component';
+import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { EditSkillComponent } from './components/tecnologias/edit-skill.component';
+import { NewSkillComponent } from './components/tecnologias/new-skill.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -36,13 +40,19 @@ import { EducacionComponent } from './educacion/educacion.component';
     EditExperienciaComponent,
     NeweducacionComponent,
     EditeducacionComponent,
-    EducacionComponent
+    EducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgCircleProgressModule.forRoot({
+
+    }),
+    BrowserAnimationsModule
   ],
   providers: [
     interceptorProvider

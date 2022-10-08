@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProyectosComponent } from './proyectos/proyectos.component';
-import { SobreMiComponent } from './sobre-mi/sobre-mi.component';
-import { TecnologiasComponent } from './tecnologias/tecnologias.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { BienvenidaComponent } from './bienvenida/bienvenida.component';
-import { LoginComponent } from './login/login.component';
-import { NeweducacionComponent } from './educacion/neweducacion.component';
-import { NuevaExperienciaComponent } from './sobre-mi/experiencia/nueva-experiencia.component';
-import { EditExperienciaComponent } from './sobre-mi/experiencia/edit-experiencia.component';
-import { EditeducacionComponent } from './educacion/editeducacion.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { TecnologiasComponent } from './components/tecnologias/tecnologias.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
+import { LoginComponent } from './components/login/login.component';
+import { NeweducacionComponent } from './components/educacion/neweducacion.component';
+import { NuevaExperienciaComponent } from './components/experiencia/nueva-experiencia.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { NewSkillComponent } from './components/tecnologias/new-skill.component';
+import { EditSkillComponent } from './components/tecnologias/edit-skill.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -47,6 +50,14 @@ const routes: Routes = [
   {
     path: 'tecnologias',
     component: TecnologiasComponent
+  },
+  {
+    path: 'newskill',
+    component: NewSkillComponent
+  },
+  {
+    path: 'editskill/:id',
+    component: EditSkillComponent
   },
   {
     path: 'contacto',
