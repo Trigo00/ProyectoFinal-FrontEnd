@@ -4,17 +4,59 @@
         <div class="projects-header">
             <h1 class="section-title"><span>Actividad</span> reciente</h1>
         </div>
+        <div class="explic">
+            <p>En esta sección se mostrarán todos los proyectos que realicé, los cuales por el momento no subiré.
+                <br>
+                (Se agrega el nombre del proyecto y debajo el enlace del mismo subido o su reposorio).
+            </p>
+        </div>
+        <div class="col-lg-2 agregar">
+            <button type="button" class="btn btn-primary" routerLink="/newproject" *ngIf="isLogged">
+                Agregar Proyecto
+            </button>
+        </div>
         <div class="all-projects">
             <div class="project-item">
-                <div class="project-info">
-                    <h1>Proyecto</h1>
-                    <h2>La sinceridad es lo más importante</h2>
-                    <p>
-                        Aún no tengo realizados proyectos concretos, solo maquetas que realizo para práctica. El día que me proponga hacer alguno, será mostrado en esta sección.
-                    </p>
-                </div>
-                <div class="project-img">
-                    <img src="assets/images/Foto2.png" class="image-fluid" alt="img">
+                <div class="col-lg-11">
+                    <div class="table">
+                        <div class="lgl">
+                            <div *ngFor="let Proyecto of proyecto">
+                                <div class="Nombrep">
+                                    <h2>{{Proyecto.nombreE}}</h2>
+                                    <a class="td1" target="_blank" href="{{Proyecto.descripcionE}}">{{Proyecto.descripcionE}}</a>
+                                    <hr>
+                                    <div class="botones">
+                                        <div *ngIf="isLogged">
+                                            <button class="btn btn-light" routerLink="/editproject/{{Proyecto.id}}">
+                                                <i class="bi bi-pencil-fill"></i>EDITAR</button>
+                                            </div>
+                                            
+                                        <div *ngIf="isLogged">
+                                            <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+                                                <i class="bi bi-trash3"></i>BORRAR</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <table class="table">
+                        <tbody>
+                            <tr *ngFor="let Proyecto of proyecto">
+                                <td><h2>{{Proyecto.nombreE}}</h2></td>
+                                <td class="td1">{{Proyecto.descripcionE}}</td>
+                                <td *ngIf="isLogged">
+                                    <button class="btn btn-light" routerLink="/editproject/{{Proyecto.id}}">
+                                        <i class="bi bi-pencil-fill"></i>EDITAR</button>
+                                </td>
+                                    
+                                <td *ngIf="isLogged">
+                                    <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+                                        <i class="bi bi-trash3"></i>BORRAR</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
                 </div>
             </div>
         </div>

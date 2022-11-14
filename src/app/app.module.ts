@@ -23,6 +23,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { EditSkillComponent } from './components/tecnologias/edit-skill.component';
 import { NewSkillComponent } from './components/tecnologias/new-skill.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
 
 
 
@@ -42,7 +44,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EditeducacionComponent,
     EducacionComponent,
     EditSkillComponent,
-    NewSkillComponent
+    NewSkillComponent,
+    NewProyectoComponent,
+    EditProyectoComponent
   ],
   imports: [
     BrowserModule,

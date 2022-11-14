@@ -261,6 +261,7 @@ a:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-x: hidden;
     
 }
 
@@ -291,12 +292,10 @@ a:hover{
 
 #projects .project-item {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 80%;
     margin: 20px auto;
-    overflow: hidden;
     border-radius: 10px;
 }
 
@@ -330,7 +329,6 @@ a:hover{
 #projects .project-img {
     /* flex-basis: 50%; */
     height: 300px;
-    overflow: hidden;
     position: relative;
     width: -moz-available;
 }
@@ -413,18 +411,7 @@ a:hover{
     height: 100%;
     width: 100%;
     position: relative;
-    border: 10px solid white;
-}
-
-#about .col-left .about-img::after {
-    content: '';
-    position: absolute;
-    left: -33px;
-    top: 19px;
-    height: 98%;
-    width: 98%;
-    border: 7px solid #0d6efd;
-    z-index: -1;
+    border: 10px solid #0d6efd;
 }
 
 #experiencia {
@@ -454,7 +441,7 @@ a:hover{
 #experiencia .table tbody tr .td1{
     font-size: 30px;
     color: white;
-    padding: 0;
+    padding-top: 10px;
 }
 
 #experiencia .table tbody tr button{
@@ -506,6 +493,7 @@ a:hover{
 }
 #educacion .col-lg-2 button{
     font-size: 10px;
+    margin-top: 15px;
 }
 #educacion h1{
     font-size: 5rem;
@@ -714,7 +702,6 @@ a:hover{
     #projects .project-item {
         height: 400px;
         margin: 0;
-        width: 100%;
         border-radius: 0;
     }
 
@@ -790,7 +777,6 @@ a:hover{
     }
     #contact .contact-item .contact-info {
         width: 100%;
-        text-align: left;
         padding-left: 20px;
     }
 }
@@ -801,12 +787,8 @@ a:hover{
         padding-top: 40px;
     }
 }
-
-@media (max-width: 768px) {
+@media(max-width: 991px){
     
-    .container-fluid{
-        background-color: transparent;
-    }
     #id1{
         background-color: #29323cc7;
         height: 100%;
@@ -815,6 +797,13 @@ a:hover{
         text-align: center; 
         display: block;
         border-radius: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .container-fluid{
+        background-color: transparent;
     }
 
     #about .col-left{
@@ -887,6 +876,12 @@ a:hover{
     }
 }
 
+@media (max-width: 1440px){
+    #educacion h1{
+        margin-top: 25px;
+    }
+}
+
 @media (min-width: 1440px){
     #contact .contact-items {
         flex-direction: row;
@@ -902,5 +897,22 @@ a:hover{
 
     #about .col-right h1{
         margin-top: 25px;
+    }
+
+    #contact .contact-item .contact-info{
+        text-align: left;
+    }
+}
+
+@media (max-width: 1293px){
+    #id1 a{
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 1173px){
+    #id1 a{
+        margin: 0 5px;
+        font-size: 20px;
     }
 }
