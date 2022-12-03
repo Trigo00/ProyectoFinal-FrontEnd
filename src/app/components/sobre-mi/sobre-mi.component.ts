@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from 'src/app/model/persona.model';
+import { PersonaService } from 'src/app/service/persona.service';
 import { Experiencia } from '../../model/experiencia';
 import { SExperienciaService } from '../../service/s-experiencia.service';
 import { TokenService } from '../../service/token.service';
@@ -10,13 +12,15 @@ import { TokenService } from '../../service/token.service';
 })
 export class SobreMiComponent implements OnInit {
 
-  expe: Experiencia[] = [];  
+  expe: Experiencia[] = [];
+  persona: Persona = null  
 
-  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService) { }
+  constructor(private sExperiencia: SExperienciaService, private tokenService: TokenService, public personaService: PersonaService) { }
 
   isLogged = false;
 
   ngOnInit(): void {
+    this.cargarPersona();
     this.cargarExperiencia();
     
     if(this.tokenService.getToken()){
@@ -24,7 +28,6 @@ export class SobreMiComponent implements OnInit {
     }else{
       this.isLogged = false;
     }
-
   }
 
   cargarExperiencia(): void{
@@ -32,6 +35,7 @@ export class SobreMiComponent implements OnInit {
   }
 
   delete(id?: number){
+
     if(id != undefined){
       this.sExperiencia.delete(id).subscribe(
         data => {
@@ -41,6 +45,12 @@ export class SobreMiComponent implements OnInit {
         }
       )
     }
+  }
+
+  cargarPersona(){
+    this.personaService.detail(1).subscribe(data => {
+      this.persona = data;
+    })
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from '../../model/persona.model';
 import { PersonaService } from '../../service/persona.service';
 
 @Component({
@@ -8,12 +7,9 @@ import { PersonaService } from '../../service/persona.service';
   styleUrls: ['./bienvenida.component.css']
 })
 export class BienvenidaComponent implements OnInit{
-  
-  persona: persona = new persona("","","");
 
-  constructor(public personaService: PersonaService){}
+  constructor(){}
 
-  ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data} ) 
+  ngOnInit(): void { 
   }
 }

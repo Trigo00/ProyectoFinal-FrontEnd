@@ -14,6 +14,7 @@ import { NewSkillComponent } from './components/tecnologias/new-skill.component'
 import { EditSkillComponent } from './components/tecnologias/edit-skill.component';
 import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
 import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
+import { EditAboutComponent } from './components/sobre-mi/edit-about.component';
 
 const routes: Routes = [
   {
@@ -68,6 +69,10 @@ const routes: Routes = [
   {
     path: 'editskill/:id',
     component: EditSkillComponent
+  },
+  {
+    path: 'editabout/:id', 
+    component: EditAboutComponent
   },
   {
     path: 'contacto',

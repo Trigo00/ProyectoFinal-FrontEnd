@@ -3,16 +3,18 @@
     <div class="about container">
         <div class="col-left">
             <div class="about-img">
-                <img src="assets/images/Foto3.png" alt="img">
+                <img src={{persona.img}} alt="img">
+            </div>
+            <div class="col-lg-2">
+                <button type="button" class="editpersona btn btn-primary" routerLink="/editabout/1" *ngIf="isLogged">
+                    Editar persona
+                </button>
             </div>
         </div>
         <div class="col-right">
             <h1 class="section-title">Sobre <span>mi</span></h1>
             <h2>Desarrollador Full Stack</h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur, laboriosam aliquam voluptatum numquam magni totam aut tenetur. Illum corporis repudiandae debitis nostrum illo quasi, quos ad perferendis eveniet, voluptatibus dolorum.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, quos explicabo ullam ducimus possimus ipsum, facere id perferendis voluptates quaerat provident nihil enim aperiam, at dignissimos est alias nam corrupti.
-            </p>
+            <p>{{persona.descripcion}}</p>
             <a href="https://drive.google.com/file/d/13ZhGiatpPNIFb3BGhAJQJX1kDYCdQFfM/view?usp=sharing" class="cta2" target="_BLANK">Descargar Curriculum</a>
             <app-educacion></app-educacion>
         </div>
